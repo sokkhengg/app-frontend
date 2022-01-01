@@ -1,5 +1,10 @@
+// react hook
 import React, { useEffect, useState } from "react";
+
+// styling
 import "./App.css";
+
+// component
 import Form from "./components/Form";
 import Header from "./components/Header";
 import TodosList from "./components/TodosList";

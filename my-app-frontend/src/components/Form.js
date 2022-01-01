@@ -20,7 +20,7 @@ const Form = ({ input, setInput, todos, setTodos, editTodo, setEditTodo }) => {
     const newTodo = todos.map((todo) =>
       todo.id === id ? { title, id, completed } : todo
     )
-    setTodos (newTodo);
+    setTodos(newTodo);
     setEditTodo("");
   };
 
