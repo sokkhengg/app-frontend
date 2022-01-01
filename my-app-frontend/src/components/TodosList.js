@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 
 const TodosList = ({ todos, setTodos, setEditTodo }) => {
   const handleDelete = ({ id }) => {
@@ -20,12 +20,6 @@ const TodosList = ({ todos, setTodos, setEditTodo }) => {
     const findTodo = todos.find((todo) => todo.id === id);
     setEditTodo(findTodo);
   }
-
-  // useEffect(() => {
-  //   return () => {
-  //     console.log(`${todos} deleted`)
-  //   }
-  // }, [todos])
 
   return (
     <div>

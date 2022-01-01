@@ -15,13 +15,12 @@
 
 /* connect to container to make our box look nice */
 .app-wrapper {
-  background-color: O#12343b;
+  background-color: #c9ecd5b8;
   min-width: 450px;
   min-height: 650px;
   padding: 30px;
   box-sizing: border-box;
   border-radius: 10px;
-  box-shadow: 3px 6px 40px #000;
   margin-bottom: 10px;
 }
 
@@ -38,9 +37,9 @@
   padding: 15px;
   margin-right: 25px;
   font-size: 20px;
-  color: #ccc;
-  background-color: O#000000;
-  border: 1px solid O#c89666;
+  color: rgb(29, 5, 5);
+  background-color: #cadecce3;
+  border: 1px solid #c89666;
   border-radius: 10px;
 }
 
@@ -51,7 +50,7 @@
   font-size: 20px;
   border-radius: 10px;
   border: 0;
-  background-color: #f1af71;
+  background-color: #65de5dd1;
   cursor: pointer;
 }
 
@@ -98,9 +97,9 @@
 
 .list {
   width: 220px;
-  background-color: 0#12343b;
+  background-color: #65de5dd1;
   border: none;
-  color: #ccc;
+  color: rgb(19, 9, 9);
   font-size: 20px;
   padding-left: 10px;
   margin-right: 15px;
