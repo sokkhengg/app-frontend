@@ -1,5 +1,5 @@
 // react hook
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
 // styling
 import "./App.css";
