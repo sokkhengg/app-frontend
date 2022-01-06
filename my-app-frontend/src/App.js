@@ -1,5 +1,5 @@
 // react hook
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 // styling
 import "./App.css";
@@ -11,14 +11,21 @@ import TodosList from "./components/TodosList";
 
 const App = () => {
 
-  // const initialState = JSON.parse(localStorage.getItem("todos")) || [];
   const [input, setInput] = useState("");
   const [todos, setTodos] = useState([]);
-  const [editTodo, setEditTodo] = useState(null);
+  // list and todo
+  const [todoName, setTodoName] = useState([])
+  const [lists, setLists] = useState([])
 
-  // useEffect(() =>{
-  //   localStorage.setItem("todos", JSON.stringify(todos));
-  // }, [todos]);
+  useEffect(()=> {
+    //Gets todos and lists
+      fetch('http://localhost:9292/todos')
+      .then(res => res.json())
+      .then(setTodoName)
+      fetch('http://localhost:9292/lists')
+      .then(res => res.json())
+      .then(setLists)
+    },[])
 
   return (
     <div className="container">
@@ -32,13 +39,11 @@ const App = () => {
             setInput={setInput}
             todos={todos}
             setTodos={setTodos}
-            editTodo={editTodo}
-            setEditTodo={setEditTodo}
           />
         </div>
         <div>
           <TodosList todos={todos} setTodos={setTodos}
-           setEditTodo={setEditTodo}/>
+          />
         </div>
       </div>
     </div>
