@@ -22,6 +22,7 @@ const TodosList = ({ todos, setTodos, setEditTodo }) => {
   }
 
   return (
+    // display all the button and the check mark
     <div>
       {todos.map((todo) => (
         <li className="list-item" key={todo.id}>
