@@ -7,8 +7,8 @@ const Form = ({ input, setInput, todos, setTodos }) => {
 
   const onFormSubmit = (event) => {
     event.preventDefault();
-      setTodos([...todos, { id: uuidv4(), title: input }]);
-      setInput("");
+    setTodos([...todos, { id: uuidv4(), title: input }]);
+    setInput("");
   };
 
   return (

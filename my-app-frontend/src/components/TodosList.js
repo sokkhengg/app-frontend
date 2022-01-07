@@ -6,15 +6,14 @@ const TodosList = ({ todos, setTodos }) => {
   };
 
   return (
-    // display all the button and the check mark
     <div>
       {todos.map((todo) => (
         <li className="list-item" key={todo.id}>
           <input
             type="text"
             value={todo.title}
-            className={`list ${todo.completed ? "complete" : ""}`}
             onChange={(event) => event.preventDefault()}
+
           />
           <div>
             <button

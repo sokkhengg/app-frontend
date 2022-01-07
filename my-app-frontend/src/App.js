@@ -13,19 +13,27 @@ const App = () => {
 
   const [input, setInput] = useState("");
   const [todos, setTodos] = useState([]);
-  // list and todo
-  const [todoName, setTodoName] = useState([])
-  const [lists, setLists] = useState([])
 
-  useEffect(()=> {
-    //Gets todos and lists
-      fetch('http://localhost:9292/todos')
+  useEffect(() => {
+    fetch("http://localhost:9292/todos")
+      .then((r) => r.json())
+      .then((todos) => setTodos(todos));
+  }, []);
+
+    //Creates a todo 
+    const postTodo = (todo) => {
+      fetch('http://localhost:9292/todos',{
+        method:'POST',
+        headers:{
+          'Content-Type':'application/json'
+        },
+        body: JSON.stringify(todo)
+      })
       .then(res => res.json())
-      .then(setTodoName)
-      fetch('http://localhost:9292/lists')
-      .then(res => res.json())
-      .then(setLists)
-    },[])
+      .then(newTodo => {
+        setTodos([newTodo,...todos])
+      })
+    }
 
   return (
     <div className="container">
@@ -43,6 +51,7 @@ const App = () => {
         </div>
         <div>
           <TodosList todos={todos} setTodos={setTodos}
+          postTodo={postTodo}
           />
         </div>
       </div>
