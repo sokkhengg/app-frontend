@@ -21,19 +21,19 @@ const App = () => {
   }, []);
 
     //Creates a todo 
-    const postTodo = (todo) => {
-      fetch('http://localhost:9292/todos',{
-        method:'POST',
-        headers:{
-          'Content-Type':'application/json'
-        },
-        body: JSON.stringify(todo)
-      })
-      .then(res => res.json())
-      .then(newTodo => {
-        setTodos([newTodo,...todos])
-      })
-    }
+    // const postTodo = (todo) => {
+    //   fetch('http://localhost:9292/todos',{
+    //     method:'POST',
+    //     headers:{
+    //       'Content-Type':'application/json'
+    //     },
+    //     body: JSON.stringify(todo)
+    //   })
+    //   .then(res => res.json())
+    //   .then(newTodo => {
+    //     setTodos([newTodo,...todos])
+    //   })
+    // }
 
   return (
     <div className="container">
@@ -51,7 +51,6 @@ const App = () => {
         </div>
         <div>
           <TodosList todos={todos} setTodos={setTodos}
-          postTodo={postTodo}
           />
         </div>
       </div>
